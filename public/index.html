@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoMart | Certified cars, honest prices</title>
+  <meta name="description" content="Hand-picked, inspected cars with transparent pricing, real-time 3D previews and instant finance quotes.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="AutoMart | Certified cars, honest prices">
+  <meta property="og:description" content="Hand-picked, inspected cars with transparent pricing, real-time 3D previews and instant finance quotes.">
+  <meta property="og:image" content="images/cars/porsche-911.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="modulepreload" href="vendor/three/build/three.module.min.js">
+  <link rel="preload" href="models/ferrari.glb" as="fetch" crossorigin>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="AutoMart home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B2D31"/><stop offset="1" stop-color="#6B7280"/></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lgm)"/><path d="M11 29 18.5 11h3L29 29" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17.5v2.5M20 23v2.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span>Auto<b>Mart</b></span></a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="inventory.html">Inventory</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div data-auth-slot><button class="btn btn-dark btn-sm" data-auth-open="signin"><span>Sign in</span></button></div>
+        <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero grain">
+      <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="hero-stage" id="hero-stage">
+        <canvas aria-label="Interactive 3D model of a sports car on a showroom turntable" role="img"></canvas>
+        <img class="hero-fallback" src="images/cars/porsche-911.jpg" alt="White sports car in a showroom">
+        <div class="loader-pill" data-progress>Warming up the engine…</div>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="chip chip-glass fade-up" style="--d:100ms"><i data-icon="sparkle"></i> 2,400+ certified cars · Finance from 3.9% APR</span>
+          <h1><span class="word"><span style="--i:0">Find</span></span> <span class="word"><span style="--i:1">a</span></span> <span class="word"><span style="--i:2">car</span></span> <span class="word"><span style="--i:3">that</span></span> <span class="word"><span style="--i:4"><em class="grad-text">moves</em></span></span> <span class="word"><span style="--i:5">you.</span></span></h1>
+          <p class="hero-lead fade-up" style="--d:800ms">Hand-picked, 200-point inspected cars with transparent pricing. We negotiate with the seller, sort the paperwork and deliver to your door.</p>
+          <div class="hero-actions fade-up" style="--d:950ms">
+            <a class="btn btn-dark btn-lg" href="inventory.html">Browse inventory <i data-icon="arrowRight"></i></a>
+            <a class="btn btn-ghost btn-lg" href="#showroom"><i data-icon="rotate"></i> Explore in 3D</a>
+          </div>
+          <div class="hero-trust fade-up" style="--d:1100ms">
+            <div class="avatars" aria-hidden="true">
+              <span style="background:#d1d5db">DB</span><span style="background:#e5e7eb">OB</span><span style="background:#c9cfda">CM</span><span style="background:#f3f4f6">+</span>
+            </div>
+            <div><span class="stars" aria-label="Rated 4.9 out of 5"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></span><br><strong>4.9/5</strong> from 1,280 happy drivers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-card fc-1"><span class="fc-icon"><i data-icon="shield"></i></span><div><strong>200-point check</strong><small>Every single car</small></div></div>
+      <div class="float-card fc-2"><span class="fc-icon"><i data-icon="key"></i></span><div><strong>Home delivery</strong><small>Keys in 48 hours</small></div></div>
+      <div class="float-card fc-3"><span class="fc-icon"><i data-icon="rotate"></i></span><div><strong>7-day returns</strong><small>No questions asked</small></div></div>
+
+      <div class="paint-dock" role="group" aria-label="Choose paint colour"><span>Try a colour</span><div class="swatches" data-hero-swatches></div></div>
+    </section>
+
+    <section class="quick-search" id="search" aria-label="Quick search">
+      <div class="container">
+        <form class="qs-card" action="inventory.html" data-reveal>
+          <div class="qs-field"><label for="qs-make">Make</label><select id="qs-make" name="make"><option value="">Any make</option></select></div>
+          <div class="qs-field"><label for="qs-body">Body type</label><select id="qs-body" name="body"><option value="">Any type</option></select></div>
+          <div class="qs-field"><label for="qs-price">Budget</label>
+            <select id="qs-price" name="max"><option value="">Any price</option><option value="25000">Up to $25,000</option><option value="35000">Up to $35,000</option><option value="50000">Up to $50,000</option><option value="90000">Up to $90,000</option></select></div>
+          <button class="btn btn-dark" type="submit"><i data-icon="search"></i> Show <span class="qs-count" data-qs-count>13</span> cars</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="brands" aria-label="Brands we stock">
+      <p>Trusted brands, thoroughly checked</p>
+      <div class="marquee"><div class="marquee-track" data-marquee>
+        <span>Porsche</span><span>Tesla</span><span>Mercedes-Benz</span><span>BMW</span><span>Audi</span><span>Toyota</span><span>Lexus</span><span>Range Rover</span><span>Honda</span><span>Kia</span><span>Mazda</span><span>Jeep</span><span>Ford</span>
+      </div></div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Why AutoMart</span>
+          <h2>Car buying, minus the <em>stress</em>.</h2>
+          <p>No haggling, no hidden faults and no paperwork for you to chase.</p>
+        </div>
+        <div class="features">
+          <article class="feature" data-reveal style="--d:0ms"><div class="feature-icon"><i data-icon="file"></i></div><h3>No surprises at handover</h3><p>A detailed inspection report covering 200+ checkpoints, so the car you collect is exactly the car you chose.</p></article>
+          <article class="feature" data-reveal style="--d:120ms"><div class="feature-icon"><i data-icon="shield"></i></div><h3>100% secure transaction</h3><p>We verify every document, title and service record, so there are no unpleasant surprises after you buy.</p></article>
+          <article class="feature" data-reveal style="--d:240ms"><div class="feature-icon"><i data-icon="headset"></i></div><h3>Support at every stage</h3><p>A dedicated manager answers your questions, verifies details and negotiates the price on your behalf.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" id="featured">
+      <div class="container">
+        <div class="section-head-row" style="margin-bottom:40px">
+          <div class="section-head" data-reveal>
+            <span class="eyebrow">Fresh arrivals</span>
+            <h2>Popular cars this week</h2>
+          </div>
+          <a class="btn btn-ghost" href="inventory.html" data-reveal>View all inventory <i data-icon="arrowRight"></i></a>
+        </div>
+        <div class="car-grid cols-4" data-featured>
+          <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" id="showroom">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Virtual showroom</span>
+          <h2>Walk around it. <em>From your sofa.</em></h2>
+          <p>Spin the car, try different paint colours and switch on drive mode. Selected listings come with the same 3D preview.</p>
+        </div>
+        <div class="showroom" data-reveal="zoom">
+          <div class="showroom-stage" id="showroom-stage">
+            <canvas aria-label="Interactive 3D car. Drag to rotate." role="img"></canvas>
+            <img class="hero-fallback" src="images/cars/porsche-911.jpg" alt="White sports car">
+            <div class="loader-pill" data-progress style="right:50%;translate:50% 0;top:46%">Loading 3D showroom…</div>
+          </div>
+          <div class="sr-panel">
+            <span class="eyebrow">Signature coupé</span>
+            <h3>Make it yours</h3>
+            <p>Drag to orbit, pick a finish, or jump to a preset angle.</p>
+            <div class="sr-label">Paint <b data-paint-name>Midnight Black</b></div>
+            <div class="swatches" data-showroom-swatches></div>
+            <div class="sr-label">Camera</div>
+            <div class="view-btns">
+              <button type="button" data-view="front">Front</button><button type="button" data-view="side">Side</button><button type="button" data-view="rear">Rear</button><button type="button" data-view="top">Top</button>
+            </div>
+          </div>
+          <div class="sr-tools">
+            <button type="button" class="drive-btn" data-drive aria-pressed="false" aria-label="Toggle drive mode" title="Drive mode"><i data-icon="play"></i></button>
+            <button type="button" data-zoom="1" aria-label="Zoom in" title="Zoom in"><i data-icon="plus"></i></button>
+            <button type="button" data-zoom="-1" aria-label="Zoom out" title="Zoom out"><i data-icon="minus"></i></button>
+          </div>
+          <div class="sr-hint"><i data-icon="rotate"></i> Drag to rotate</div>
+          <div class="sr-stats">
+            <div><strong data-count="562" data-suffix=" hp">0</strong><span>Peak power</span></div>
+            <div><strong data-count="3.4" data-suffix="s">0</strong><span>0 to 60 mph</span></div>
+            <div><strong data-count="202" data-suffix=" mph">0</strong><span>Top speed</span></div>
+            <div><strong data-count="7">0</strong><span>Paint finishes</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" id="how">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">How it works</span>
+          <h2>From browsing to <em>keys in hand</em></h2>
+        </div>
+        <div class="steps" data-steps>
+          <div class="steps-line" aria-hidden="true"><i></i></div>
+          <div class="step" data-reveal style="--d:0ms"><div class="step-num"><i data-icon="search"></i></div><h3>Choose your car</h3><p>Filter hundreds of certified cars and explore them in detail.</p></div>
+          <div class="step" data-reveal style="--d:100ms"><div class="step-num"><i data-icon="wallet"></i></div><h3>Get pre-approved</h3><p>Soft-check finance in two minutes with zero impact on your score.</p></div>
+          <div class="step" data-reveal style="--d:200ms"><div class="step-num"><i data-icon="file"></i></div><h3>We do the paperwork</h3><p>We negotiate with the seller and handle title, tax and registration.</p></div>
+          <div class="step" data-reveal style="--d:300ms"><div class="step-num"><i data-icon="key"></i></div><h3>Drive away happy</h3><p>Collect it from our lounge or have it delivered. You get 7 days to be sure.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0" id="finance">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="eyebrow">Finance calculator</span>
+          <h2>See your monthly payment <em>instantly</em></h2>
+        </div>
+        <div class="finance">
+          <div class="calc" data-reveal="left">
+            <div class="range-field">
+              <div class="range-top"><label for="calc-price">Car price</label><output data-out="price">$35,000</output></div>
+              <input type="range" id="calc-price" min="8000" max="130000" step="500" value="35000">
+            </div>
+            <div class="range-field">
+              <div class="range-top"><label for="calc-down">Down payment</label><output data-out="down">$5,000</output></div>
+              <input type="range" id="calc-down" min="0" max="40000" step="500" value="5000">
+            </div>
+            <div class="range-field">
+              <div class="range-top"><label for="calc-apr">Interest rate (APR)</label><output data-out="apr">5.9%</output></div>
+              <input type="range" id="calc-apr" min="1.9" max="14" step="0.1" value="5.9">
+            </div>
+            <div class="range-field">
+              <div class="range-top"><label>Term</label><output data-out="term">60 months</output></div>
+              <div class="term-pills" role="group" aria-label="Loan term">
+                <button type="button" data-term="24" aria-pressed="false">24</button><button type="button" data-term="36" aria-pressed="false">36</button><button type="button" data-term="48" aria-pressed="false">48</button><button type="button" data-term="60" aria-pressed="true">60</button><button type="button" data-term="72" aria-pressed="false">72</button>
+              </div>
+            </div>
+          </div>
+          <div class="calc-result" data-reveal="right">
+            <span class="eyebrow">Estimated monthly</span>
+            <div class="calc-monthly" aria-live="polite"><span data-monthly>$580</span><small> /mo</small></div>
+            <p style="opacity:.75">This is an estimate. Your actual rate depends on your credit profile.</p>
+            <dl class="calc-breakdown">
+              <div><dt>Amount financed</dt><dd data-financed>$30,000</dd></div>
+              <div><dt>Total interest</dt><dd data-interest>$4,800</dd></div>
+              <div><dt>Total cost</dt><dd data-total>$39,800</dd></div>
+            </dl>
+            <a class="btn btn-lg" href="inventory.html" data-calc-link>See cars in budget <i data-icon="arrowRight"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="stats" data-reveal>
+          <div class="stat"><strong data-count="2400" data-suffix="+">0</strong><span>Cars delivered</span></div>
+          <div class="stat"><strong data-count="98" data-suffix="%">0</strong><span>Customer satisfaction</span></div>
+          <div class="stat"><strong data-count="4.9" data-suffix="★">0</strong><span>Average rating</span></div>
+          <div class="stat"><strong data-count="24" data-suffix="h">0</strong><span>Loan approval</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Testimonials</span>
+          <h2>Loved by drivers <em>everywhere</em></h2>
+        </div>
+        <div class="testimonials">
+          <figure class="quote" data-reveal style="--d:0ms"><div class="quote-top"><i data-icon="quote"></i><span class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></span></div>
+            <blockquote>AutoMart made owning a car possible for me. I applied for a car loan through their Instagram link and their team handled everything with the seller. It was quick and I never had to chase anyone.</blockquote>
+            <footer><span class="avatar" style="background:#e5e7eb">DB</span><div><strong>Daniel Brooks</strong><small>Bought a Honda Civic</small></div></footer>
+          </figure>
+          <figure class="quote" data-reveal style="--d:120ms"><div class="quote-top"><i data-icon="quote"></i><span class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></span></div>
+            <blockquote>What stands out is the people. They listened to what I needed, explained my options clearly and kept me updated at every step. I never felt pressured or left in the dark.</blockquote>
+            <footer><span class="avatar" style="background:#c9cfda">OB</span><div><strong>Olivia Bennett</strong><small>Bought a Tesla Model 3</small></div></footer>
+          </figure>
+          <figure class="quote" data-reveal style="--d:240ms"><div class="quote-top"><i data-icon="quote"></i><span class="stars"><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i><i data-icon="star"></i></span></div>
+            <blockquote>Buying a car usually means endless back-and-forth, but AutoMart took care of it all. They dealt with the seller and sorted the paperwork. All I had to do was pick up my keys.</blockquote>
+            <footer><span class="avatar" style="background:#f3f4f6">CM</span><div><strong>Chloe Morgan</strong><small>Bought a Mazda CX-5</small></div></footer>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:40px">
+      <div class="container">
+        <div class="cta" data-reveal="zoom">
+          <div>
+            <span class="eyebrow">Ready when you are</span>
+            <h2>Ready to drive your <em>dream car?</em></h2>
+            <p>First car, an upgrade or help with a loan: create a free account and we'll take it from there.</p>
+            <div class="cta-actions">
+              <button class="btn btn-dark btn-lg" data-auth-open="signup">Create free account <i data-icon="arrowRight"></i></button>
+              <a class="btn btn-ghost btn-lg" href="contact.html">Talk to an expert</a>
+            </div>
+          </div>
+          <div class="cta-visual">
+            <img src="images/cars/range-rover-sport.jpg" alt="White Range Rover Sport parked outdoors" loading="lazy">
+            <div class="float-card"><span class="fc-icon"><i data-icon="check"></i></span><div><strong>Loan approved</strong><small>$41,500 · 4.2% APR</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html" aria-label="AutoMart home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B2D31"/><stop offset="1" stop-color="#6B7280"/></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lgm)"/><path d="M11 29 18.5 11h3L29 29" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17.5v2.5M20 23v2.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span>Auto<b>Mart</b></span></a>
+          <p>Certified cars, honest prices and financing that fits. We handle the sellers and the paperwork. You pick up the keys.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="X (Twitter)">X</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul><li><a href="inventory.html">Inventory</a></li><li><a href="index.html#showroom">3D Showroom</a></li><li><a href="index.html#finance">Finance calculator</a></li><li><a href="inventory.html?fuel=Electric">Electric cars</a></li></ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html#faq">FAQ</a></li><li><a href="about.html#credits">Image credits</a></li></ul>
+        </div>
+        <div class="footer-news">
+          <h4>Get new arrivals first</h4>
+          <p style="font-size:.92rem">One calm email a week. No spam, ever.</p>
+          <form class="newsletter" data-newsletter>
+            <label class="sr-only" for="nl-email">Email address</label>
+            <input id="nl-email" type="email" placeholder="you@example.com" required>
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-word" aria-hidden="true">AutoMart</div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> AutoMart Technologies.</p>
+        <p>Photos: Wikimedia Commons contributors · 3D model: vicent091036 (CC BY 4.0) · <a href="about.html#credits">Credits</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="importmap">
+  { "imports": {
+      "three": "./vendor/three/build/three.module.min.js",
+      "three/addons/": "./vendor/three/examples/jsm/"
+  } }
+  </script>
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

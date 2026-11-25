@@ -1,0 +1,93 @@
+{
+  "toyota-camry": {
+    "title": "2023 Toyota Camry XSE, front right, 08-30-2026.jpg",
+    "author": "MercurySable99",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2023_Toyota_Camry_XSE,_front_right,_08-30-2026.jpg"
+  },
+  "honda-civic": {
+    "title": "2022 Honda Civic LX Sedan, front right, 11-02-2022.jpg",
+    "author": "MercurySable99",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2022_Honda_Civic_LX_Sedan,_front_right,_11-02-2022.jpg"
+  },
+  "ford-f150": {
+    "title": "2021 Ford F-150 SuperCrew, front 4.28.21.jpg",
+    "author": "Kevauto",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2021_Ford_F-150_SuperCrew,_front_4.28.21.jpg"
+  },
+  "bmw-3-series": {
+    "title": "BMW 3-Series (G20) M340i (2021) (53492076621).jpg",
+    "author": "Charles from Port Chester, New York",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:BMW_3-Series_(G20)_M340i_(2021)_(53492076621).jpg"
+  },
+  "tesla-model-3": {
+    "title": "Tesla Model 3 (2023) IMG 9488 (cropped).jpg",
+    "author": "Alexander-93",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tesla_Model_3_(2023)_IMG_9488_(cropped).jpg"
+  },
+  "porsche-911": {
+    "title": "Porsche 911, EMS 2024, Essen (P1032183).jpg",
+    "author": "Matti Blume",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:Porsche_911,_EMS_2024,_Essen_(P1032183).jpg"
+  },
+  "range-rover-sport": {
+    "title": "2023 Range Rover Sport P400 Dynamic SE in Fuji White, front left.jpg",
+    "author": "Mr.choppers",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2023_Range_Rover_Sport_P400_Dynamic_SE_in_Fuji_White,_front_left.jpg"
+  },
+  "audi-a4": {
+    "title": "Audi A4 S line Package (B9) front.JPG",
+    "author": "Tokumeigakarinoaoshima",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Audi_A4_S_line_Package_(B9)_front.JPG"
+  },
+  "mercedes-c-class": {
+    "title": "Mercedes-Benz W206 C 300 AMG Line Cavansite Blue Metallic (4).jpg",
+    "author": "Damian B Oh",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mercedes-Benz_W206_C_300_AMG_Line_Cavansite_Blue_Metallic_(4).jpg"
+  },
+  "mazda-cx5": {
+    "title": "2022 Mazda CX-5 2.0 front.jpg",
+    "author": "ShangTW",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2022_Mazda_CX-5_2.0_front.jpg"
+  },
+  "jeep-wrangler": {
+    "title": "2021 Jeep Wrangler Rubicon Unlimited Auto 1.jpg",
+    "author": "Calreyn88",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2021_Jeep_Wrangler_Rubicon_Unlimited_Auto_1.jpg"
+  },
+  "kia-ev6": {
+    "title": "Kia EV6 GT-Line 1X7A0317.jpg",
+    "author": "Alexander Migl",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kia_EV6_GT-Line_1X7A0317.jpg"
+  },
+  "lexus-rx": {
+    "title": "Lexus RX 500h F Sport Performance (TALH17) 1X7A7076.jpg",
+    "author": "Alexander-93",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lexus_RX_500h_F_Sport_Performance_(TALH17)_1X7A7076.jpg"
+  }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventory | AutoMart</title>
+  <meta name="description" content="Browse certified pre-owned and new cars with transparent pricing, filters and instant finance estimates.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Inventory | AutoMart">
+  <meta property="og:description" content="Browse certified pre-owned and new cars with transparent pricing, filters and instant finance estimates.">
+  <meta property="og:image" content="images/cars/porsche-911.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="AutoMart home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B2D31"/><stop offset="1" stop-color="#6B7280"/></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lgm)"/><path d="M11 29 18.5 11h3L29 29" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17.5v2.5M20 23v2.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span>Auto<b>Mart</b></span></a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="inventory.html" aria-current="page">Inventory</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div data-auth-slot><button class="btn btn-dark btn-sm" data-auth-open="signin"><span>Sign in</span></button></div>
+        <button class="menu-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero grain">
+      <div class="aurora" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <div class="container">
+        <nav class="breadcrumb fade-up" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span>Inventory</span></nav>
+        <h1 class="fade-up" style="--d:100ms">Find your <em class="grad-text">perfect match</em></h1>
+        <p class="lead fade-up" style="--d:200ms">Every car is 200-point inspected, history-checked and covered by a 7-day money-back guarantee.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:10px">
+      <div class="container inv-layout">
+        <aside class="filters" id="filters" aria-label="Filters">
+          <div class="filters-head"><h2>Filters</h2><button class="link-btn" type="button" data-reset>Reset all</button></div>
+          <div class="filter-group"><h3>Make</h3><div class="pill-group" data-filter="manufacturer"></div></div>
+          <div class="filter-group"><h3>Body type</h3><div class="pill-group" data-filter="body_type"></div></div>
+          <div class="filter-group"><h3>Fuel</h3><div class="pill-group" data-filter="fuel"></div></div>
+          <div class="filter-group"><h3>Condition</h3><div class="pill-group" data-filter="state"></div></div>
+          <div class="filter-group">
+            <h3><label for="max-price">Max price</label></h3>
+            <input type="range" id="max-price" min="20000" max="130000" step="1000" value="130000">
+            <div class="price-out"><span>$20k</span><span data-price-out>Any</span></div>
+          </div>
+          <div class="filter-group">
+            <h3>Saved</h3>
+            <div class="pill-group"><button type="button" class="pill" data-saved aria-pressed="false"><i data-icon="heart"></i> Only my favourites</button></div>
+          </div>
+          <button class="btn btn-dark btn-block filter-toggle" type="button" data-close-filters style="margin-top:18px">Show results</button>
+        </aside>
+        <div class="filters-backdrop" data-close-filters></div>
+
+        <div>
+          <div class="toolbar">
+            <label class="search-box"><span class="sr-only">Search cars</span><i data-icon="search"></i><input type="search" placeholder="Search make, model, colour…" data-search></label>
+            <label class="sr-only" for="sort">Sort by</label>
+            <select id="sort" class="select" data-sort>
+              <option value="featured">Recommended</option>
+              <option value="price_asc">Price: low to high</option>
+              <option value="price_desc">Price: high to low</option>
+              <option value="year_desc">Newest year</option>
+              <option value="mileage_asc">Lowest mileage</option>
+            </select>
+            <button class="btn btn-ghost filter-toggle" type="button" data-open-filters><i data-icon="sliders"></i> Filters</button>
+          </div>
+          <div class="result-meta"><p><strong data-count-out>0</strong> cars available</p><div class="active-filters" data-active></div></div>
+          <div class="car-grid" data-grid>
+            <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="index.html" aria-label="AutoMart home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B2D31"/><stop offset="1" stop-color="#6B7280"/></linearGradient></defs><rect width="40" height="40" rx="12" fill="url(#lgm)"/><path d="M11 29 18.5 11h3L29 29" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17.5v2.5M20 23v2.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span>Auto<b>Mart</b></span></a>
+          <p>Certified cars, honest prices and financing that fits. We handle the sellers and the paperwork. You pick up the keys.</p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="X (Twitter)">X</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul><li><a href="inventory.html">Inventory</a></li><li><a href="index.html#showroom">3D Showroom</a></li><li><a href="index.html#finance">Finance calculator</a></li><li><a href="inventory.html?fuel=Electric">Electric cars</a></li></ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul><li><a href="about.html">About us</a></li><li><a href="contact.html">Contact</a></li><li><a href="contact.html#faq">FAQ</a></li><li><a href="about.html#credits">Image credits</a></li></ul>
+        </div>
+        <div class="footer-news">
+          <h4>Get new arrivals first</h4>
+          <p style="font-size:.92rem">One calm email a week. No spam, ever.</p>
+          <form class="newsletter" data-newsletter>
+            <label class="sr-only" for="nl-email">Email address</label>
+            <input id="nl-email" type="email" placeholder="you@example.com" required>
+            <button class="btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-word" aria-hidden="true">AutoMart</div>
+      <div class="footer-bottom">
+        <p>&copy; <span data-year>2026</span> AutoMart Technologies.</p>
+        <p>Photos: Wikimedia Commons contributors · 3D model: vicent091036 (CC BY 4.0) · <a href="about.html#credits">Credits</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/inventory.js"></script>
+</body>
+</html>
